@@ -1,4 +1,4 @@
-# mbili
+# mbli
 
 ## Project setup
 ```

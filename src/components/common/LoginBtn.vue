@@ -1,11 +1,14 @@
 <template>
-    <div class='btnParent' @click="registerClick">
-        <div class="loginbtn">{{btnTxt}}</div>
+    <div class="btnparent" @click="registerClick">
+        <div class="loginBtn">
+            {{btntext}}
+        </div>
     </div>
 </template>
+
 <script>
 export default {
-    props:['btnTxt'],
+    props:['btntext'],
     methods:{
         registerClick(){
             this.$emit('registerSubmit')
@@ -13,8 +16,9 @@ export default {
     }
 }
 </script>
+
 <style lang="less">
-    .loginbtn{
+    .loginBtn{
         height: 45px;
         background-color: #ff9db5;
         color:white;
@@ -22,9 +26,5 @@ export default {
         justify-content: center;
         align-items: center;
         border-radius: 22.5px;
-    }
-    .btnParent{
-        padding:4.167vw 2.778vw;
-
     }
 </style>

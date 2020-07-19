@@ -1,41 +1,39 @@
 <template>
     <div>
-        <van-field
-        :label = "label" 
-        :type = "type" 
-        :placeholder = "placeholder"
-        :rule = "rule" 
-        v-model = "content" 
+        <van-field 
+        v-model="content" 
+        :label="label"
+        :type='type'
+        :placeholder='placeholder'
+        :rule='rule'
         />
+
     </div>
 </template>
 
 <script>
-
 export default {
     data(){
-        return {
-            content: ''
+        return{
+            content:""
         }
     },
     props:['label', 'type', 'placeholder', 'rule'],
     methods:{
-        handlerulg(){
-
-            const rue = new RegExp(this.rule)
-            console.log("执行啦watch", this.content)
+        handlerRulg(){
+            const rue = new RegExp(this.rule);
             if(rue.test(this.content)){
-                console.log("正则校验成功了");
-                this.$emit('inputChange',this.content)
-            }    
+                console.log("正则校验成功了",this.content);
+                this.$emit('inputChange', this.content)
+
+            }
         }
     },
     watch:{
         content(){
-            this.handlerulg()
+            this.handlerRulg()
         }
     }
-
 }
 </script>
 
