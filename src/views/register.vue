@@ -54,6 +54,12 @@ export default {
             if (rulg.test(this.model.name) && rulg.test(this.model.username) && rulg.test(this.model.password)){
                 const res = await this.$http.post('/register',this.model) // eslint-disable-line no-unused-vars
                 this.$msg.fail(res.data.msg)
+                localStorage.setItem('id', res.data.id)
+                localStorage.setItem('token', res.data.objtoken)
+                setTimeout(()=>{
+                    this.$router.push('/userinfo')
+                },1000)
+                
             }else{
                 this.$msg.fail('格式化不正确，重新输入')
             }
